@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Return chart</title>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+			integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="app.js" type="module"></script>
+		<style>
+			body {
+				margin: 1rem;
+				font-family: sans-serif;
+			}
+			.chartWrapper {
+				position: relative;
+				height: 70vh;
+			}
+			.control {
+				height: calc(30vh - 2rem);
+				display: grid;
+				grid-template-rows: 1fr auto;
+				gap: 0.5rem;
+			}
+			#form {
+				display: contents;
+			}
+			button {
+				cursor: pointer;
+			}
+			textarea {
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="chartWrapper">
+			<canvas id="chart" width="400" height="400"></canvas>
+		</div>
+		<div class="control">
+			<form id="form">
+				<textarea placeholder="Place your JavaScript function definition here">
+const headOrTail = () => {
+	if (Math.random() < 0.5) {
+		return 'Head'
+	}
+	return 'Tail'
+}</textarea
+				>
+				<button type="submit">Run</button>
+			</form>
+		</div>
+	</body>
+</html>
