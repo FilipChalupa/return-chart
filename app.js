@@ -14,7 +14,7 @@ const chart = new Chart(context, {
 	data: {
 		datasets: [
 			{
-				label: 'Results',
+				label: '',
 				data: [],
 				backgroundColor: colors,
 			},

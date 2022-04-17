@@ -16,13 +16,14 @@
 			body {
 				margin: 1rem;
 				font-family: sans-serif;
+				display: grid;
+				grid-template-rows: 70vh calc(30vh - 2rem - 1rem);
+				gap: 1rem;
 			}
 			.chartWrapper {
 				position: relative;
-				height: 70vh;
 			}
 			.control {
-				height: calc(30vh - 2rem);
 				display: grid;
 				grid-template-rows: 1fr auto;
 				gap: 0.5rem;
@@ -30,11 +31,17 @@
 			#form {
 				display: contents;
 			}
-			button {
+			button,
+			label {
 				cursor: pointer;
 			}
 			textarea {
 				resize: none;
+				tab-size: 4;
+			}
+			label {
+				display: grid;
+				grid-template-rows: auto 1fr;
 			}
 		</style>
 	</head>
@@ -44,14 +51,19 @@
 		</div>
 		<div class="control">
 			<form id="form">
-				<textarea placeholder="Place your JavaScript function definition here">
+				<label>
+					<div>Place your JavaScript function definition here:</div>
+					<textarea
+						placeholder="const myFunction = () => Math.random() < 0.5 ? 'Head' : 'Tail'"
+					>
 const headOrTail = () => {
 	if (Math.random() < 0.5) {
 		return 'Head'
 	}
 	return 'Tail'
 }</textarea
-				>
+					>
+				</label>
 				<button type="submit">Run</button>
 			</form>
 		</div>
