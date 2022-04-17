@@ -24,6 +24,17 @@
 			property="og:image"
 			content="https://filipchalupa.cz/return-chart//og-image.png"
 		/>
+		<meta name="color-scheme" content="light dark" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: light)"
+			content="#FFFFFF"
+		/>
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="#121212"
+		/>
 		<style>
 			body {
 				margin: 1rem;
@@ -31,6 +42,12 @@
 				display: grid;
 				grid-template-rows: 70vh calc(30vh - 2rem - 1rem);
 				gap: 1rem;
+			}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: #121212;
+					color: #ffffff;
+				}
 			}
 			.chartWrapper {
 				position: relative;
